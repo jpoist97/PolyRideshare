@@ -48,13 +48,28 @@ class CreateRideViewController: UIViewController {
         
         //database part
         ref = Database.database().reference()
-        self.ref.child("forms").child("test_child").setValue(OfferPost(username: "username1", fromLocation: "f", toLocation: "t", date: "d", time: 0, price: 0, phoneNumber: "408", willStop: false, numSeats: 0).toDictionary(), withCompletionBlock: { err, ref in
+        self.ref.child("forms").childByAutoId().setValue(fillOfferPost().toDictionary(), withCompletionBlock: { err, ref in
             if let error = err {
                 print("userInfoDictionary was not saved: \(error.localizedDescription)")
             } else {
                 print("userInfoDictionary saved successfully!")
             }
         })
+    
+
+        let query = ref.child("forms").queryOrdered(byChild: "username")
+        
+        query.observeSingleEvent(of: .value
+            , with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                let username = value?["username"] as? String ?? ""
+                let fromLocation = value?["toLocation"] as? String ?? ""
+                print(username, fromLocation)
+        })
+    }
+    
+    func fillOfferPost() -> OfferPost {
+        return OfferPost(username: "username1", fromLocation: "f", toLocation: "t", date: "d", time: 0, price: 0, phoneNumber: "408", willStop: false, numSeats: 0)
     }
     
 //=======
