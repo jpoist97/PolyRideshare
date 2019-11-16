@@ -15,24 +15,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPH-0l-pwl">
-                                <rect key="frame" x="102" y="250" width="210" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Seeking"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background2" translatesAutoresizingMaskIntoConstraints="NO" id="F7m-3h-2Bb">
+                                <rect key="frame" x="0.0" y="-8" width="414" height="917"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="headTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krb-vX-u6d">
+                                <rect key="frame" x="25" y="236.5" width="364" height="74"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="CAL POLY RIDESHARE">
+                                        <attributes>
+                                            <color key="NSColor" red="0.15276647595068496" green="0.35013630696438353" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="31" name="ArialRoundedMTBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" red="0.30840110780000002" green="0.5618229508" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="shadowColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="2" height="-2"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="faT-IB-gcB">
+                                <rect key="frame" x="115" y="410.5" width="184" height="45.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Offering">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="28" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
-                                    <segue destination="ffY-Mu-xkB" kind="show" id="xji-zf-gus"/>
+                                    <segue destination="ffY-Mu-xkB" kind="show" id="0I2-4l-VNI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptx-Ks-X2X">
-                                <rect key="frame" x="102" y="404" width="210" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUd-1m-OSz">
+                                <rect key="frame" x="116" y="531" width="183" height="45.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Offering"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Seeking">
+                                            <attributes>
+                                                <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="28" name="HelveticaNeue-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
                                 <connections>
-                                    <segue destination="o4g-BT-HaT" kind="show" id="uKj-rT-eyj"/>
+                                    <segue destination="o4g-BT-HaT" kind="show" id="ym0-hc-p1S"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image4" translatesAutoresizingMaskIntoConstraints="NO" id="Ky6-me-NHA">
+                                <rect key="frame" x="150" y="84" width="114" height="112.5"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ky6-me-NHA" secondAttribute="trailing" constant="150" id="0oA-4H-3zQ"/>
+                            <constraint firstItem="F7m-3h-2Bb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="208-kx-IHr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F7m-3h-2Bb" secondAttribute="bottom" id="8xi-2v-bCs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="krb-vX-u6d" secondAttribute="trailing" constant="25" id="EtW-yp-xuQ"/>
+                            <constraint firstItem="Ky6-me-NHA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="FRa-ia-bve"/>
+                            <constraint firstItem="F7m-3h-2Bb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LaY-Kw-AwM"/>
+                            <constraint firstItem="Ky6-me-NHA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="150" id="OSV-M6-qld"/>
+                            <constraint firstItem="faT-IB-gcB" firstAttribute="top" secondItem="krb-vX-u6d" secondAttribute="bottom" constant="100" id="StX-HY-zRf"/>
+                            <constraint firstItem="F7m-3h-2Bb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tw3-Tg-vG1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="faT-IB-gcB" secondAttribute="trailing" constant="115" id="iXL-yB-hZ4"/>
+                            <constraint firstItem="faT-IB-gcB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="115" id="kkC-gQ-Mlt"/>
+                            <constraint firstItem="krb-vX-u6d" firstAttribute="top" secondItem="Ky6-me-NHA" secondAttribute="bottom" constant="40" id="q4y-yE-InH"/>
+                            <constraint firstItem="krb-vX-u6d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="tdQ-9G-Bf4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -322,4 +382,8 @@
             <point key="canvasLocation" x="2382" y="875"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background2" width="91.5" height="137.5"/>
+        <image name="image4" width="112.5" height="112.5"/>
+    </resources>
 </document>
