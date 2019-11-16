@@ -9,11 +9,37 @@
 import UIKit
 
 class SeeRideViewController: UIViewController {
-
+    
+    @IBOutlet weak var inputDateTimeTextField: UITextField!
+    
+    private var datePicker: UIDatePicker?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        datePicker?.addTarget(self, action: #selector(SeeRideViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SeeRideViewController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+        inputDateTimeTextField.inputView = datePicker
 
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+        inputDateTimeTextField.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
+        
     }
     
 
