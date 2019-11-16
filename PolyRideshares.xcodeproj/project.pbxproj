@@ -13,6 +13,7 @@
 		D004C6D22380856A00F779B6 /* CreateRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004C6D12380856A00F779B6 /* CreateRideViewController.swift */; };
 		D004C6D42380857F00F779B6 /* SeeRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004C6D32380857F00F779B6 /* SeeRideViewController.swift */; };
 		D004C6D62380868C00F779B6 /* ListRidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004C6D52380868C00F779B6 /* ListRidesViewController.swift */; };
+		D004C6D82380891A00F779B6 /* OfferPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004C6D72380891A00F779B6 /* OfferPost.swift */; };
 		D02CFAF023807EE5009BCE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CFAEF23807EE5009BCE0C /* AppDelegate.swift */; };
 		D02CFAF223807EE5009BCE0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CFAF123807EE5009BCE0C /* SceneDelegate.swift */; };
 		D02CFAF423807EE5009BCE0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CFAF323807EE5009BCE0C /* ViewController.swift */; };
@@ -53,6 +54,7 @@
 		D004C6D12380856A00F779B6 /* CreateRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRideViewController.swift; sourceTree = "<group>"; };
 		D004C6D32380857F00F779B6 /* SeeRideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeRideViewController.swift; sourceTree = "<group>"; };
 		D004C6D52380868C00F779B6 /* ListRidesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRidesViewController.swift; sourceTree = "<group>"; };
+		D004C6D72380891A00F779B6 /* OfferPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferPost.swift; sourceTree = "<group>"; };
 		D02CFAEC23807EE5009BCE0C /* PolyRideshares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolyRideshares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02CFAEF23807EE5009BCE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D02CFAF123807EE5009BCE0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				D02CFAF123807EE5009BCE0C /* SceneDelegate.swift */,
 				D02CFAF323807EE5009BCE0C /* ViewController.swift */,
 				D02CFAF523807EE5009BCE0C /* Main.storyboard */,
+				D004C6D72380891A00F779B6 /* OfferPost.swift */,
 				D004C6D52380868C00F779B6 /* ListRidesViewController.swift */,
 				D004C6D12380856A00F779B6 /* CreateRideViewController.swift */,
 				D004C6D32380857F00F779B6 /* SeeRideViewController.swift */,
@@ -420,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D004C6D82380891A00F779B6 /* OfferPost.swift in Sources */,
 				D004C6D22380856A00F779B6 /* CreateRideViewController.swift in Sources */,
 				D02CFAF423807EE5009BCE0C /* ViewController.swift in Sources */,
 				D004C6D62380868C00F779B6 /* ListRidesViewController.swift in Sources */,
