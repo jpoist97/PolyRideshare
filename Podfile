@@ -7,6 +7,7 @@ target 'PolyRideshares' do
 
   # Pods for PolyRideshares
   pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
   target 'PolyRidesharesTests' do
     inherit! :search_paths
