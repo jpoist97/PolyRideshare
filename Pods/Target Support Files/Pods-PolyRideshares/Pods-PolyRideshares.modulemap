@@ -1,0 +1,6 @@
+framework module Pods_PolyRideshares {
+  umbrella header "Pods-PolyRideshares-umbrella.h"
+
+  export *
+  module * { export * }
+}
