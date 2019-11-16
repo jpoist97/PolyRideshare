@@ -21,6 +21,16 @@ class CreateRideViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        datePicker?.addTarget(self, action: #selector(CreateRideViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateRideViewController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+        inputTextField.inputView = datePicker
         //Test Query code
 //        ref.child("users").child("test_child").observeSingleEvent(of: .value, with: { (snapshot) in
 //            let value = snapshot.value as? NSDictionary
@@ -36,15 +46,7 @@ class CreateRideViewController: UIViewController {
     @IBAction func submitButtonPressed(_ sender: UIButton) {
 //=======
         
-        datePicker = UIDatePicker()
-        datePicker?.datePickerMode = .dateAndTime
-        datePicker?.addTarget(self, action: #selector(CreateRideViewController.dateChanged(datePicker:)), for: .valueChanged)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateRideViewController.viewTapped(gestureRecognizer:)))
-        
-        view.addGestureRecognizer(tapGesture)
-        
-        inputTextField.inputView = datePicker
         
         //database part
         ref = Database.database().reference()
