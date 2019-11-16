@@ -11,10 +11,15 @@ import Firebase
 import FirebaseDatabase
 
 class CreateRideViewController: UIViewController {
+    
+    @IBOutlet weak var inputTextField: UITextField!
+    
+    private var datePicker: UIDatePicker?
 
     var ref: DatabaseReference!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         //Test Query code
 //        ref.child("users").child("test_child").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -29,6 +34,19 @@ class CreateRideViewController: UIViewController {
     }
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
+//=======
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        datePicker?.addTarget(self, action: #selector(CreateRideViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateRideViewController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+        inputTextField.inputView = datePicker
+        
+        //database part
         ref = Database.database().reference()
         self.ref.child("forms").child("test_child").setValue(OfferPost(username: "username1", fromLocation: "f", toLocation: "t", date: "d", time: 0, price: 0, phoneNumber: "408", willStop: false, numSeats: 0).toDictionary(), withCompletionBlock: { err, ref in
             if let error = err {
@@ -39,7 +57,27 @@ class CreateRideViewController: UIViewController {
         })
     }
     
+//=======
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+        inputTextField.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
+    }
+    
+    
+    func uploadForm() -> Void {
+        self.ref.child("users").child("test_child").setValue(OfferPost())
+    }
+    
+    
 
+    
     /*
     // MARK: - Navigation
 
