@@ -22,7 +22,8 @@
 		D02CFAFC23807EE7009BCE0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02CFAFA23807EE7009BCE0C /* LaunchScreen.storyboard */; };
 		D02CFB0723807EE7009BCE0C /* PolyRidesharesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CFB0623807EE7009BCE0C /* PolyRidesharesTests.swift */; };
 		D02CFB1223807EE7009BCE0C /* PolyRidesharesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CFB1123807EE7009BCE0C /* PolyRidesharesUITests.swift */; };
-		D02CFB2023807F6C009BCE0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D02CFB1F23807F6B009BCE0C /* GoogleService-Info.plist */; };
+		D0AB76D42380901000BA878D /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB76D32380901000BA878D /* DoneViewController.swift */; };
+		D0AB76D623809AF500BA878D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0AB76D523809AF500BA878D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +70,8 @@
 		D02CFB0D23807EE7009BCE0C /* PolyRidesharesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolyRidesharesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02CFB1123807EE7009BCE0C /* PolyRidesharesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolyRidesharesUITests.swift; sourceTree = "<group>"; };
 		D02CFB1323807EE7009BCE0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D02CFB1F23807F6B009BCE0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0AB76D32380901000BA878D /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
+		D0AB76D523809AF500BA878D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E84F585630D282EC66D480E9 /* Pods-PolyRideshares-PolyRidesharesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyRideshares-PolyRidesharesUITests.debug.xcconfig"; path = "Target Support Files/Pods-PolyRideshares-PolyRidesharesUITests/Pods-PolyRideshares-PolyRidesharesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +155,7 @@
 				D02CFAF123807EE5009BCE0C /* SceneDelegate.swift */,
 				D02CFAF323807EE5009BCE0C /* ViewController.swift */,
 				D02CFAF523807EE5009BCE0C /* Main.storyboard */,
+				D0AB76D32380901000BA878D /* DoneViewController.swift */,
 				D004C6D72380891A00F779B6 /* OfferPost.swift */,
 				D004C6D52380868C00F779B6 /* ListRidesViewController.swift */,
 				D004C6D12380856A00F779B6 /* CreateRideViewController.swift */,
@@ -160,7 +163,7 @@
 				D02CFAF823807EE7009BCE0C /* Assets.xcassets */,
 				D02CFAFA23807EE7009BCE0C /* LaunchScreen.storyboard */,
 				D02CFAFD23807EE7009BCE0C /* Info.plist */,
-				D02CFB1F23807F6B009BCE0C /* GoogleService-Info.plist */,
+				D0AB76D523809AF500BA878D /* GoogleService-Info.plist */,
 			);
 			path = PolyRideshares;
 			sourceTree = "<group>";
@@ -292,8 +295,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D02CFB2023807F6C009BCE0C /* GoogleService-Info.plist in Resources */,
 				D02CFAFC23807EE7009BCE0C /* LaunchScreen.storyboard in Resources */,
+				D0AB76D623809AF500BA878D /* GoogleService-Info.plist in Resources */,
 				D02CFAF923807EE7009BCE0C /* Assets.xcassets in Resources */,
 				D02CFAF723807EE5009BCE0C /* Main.storyboard in Resources */,
 			);
@@ -423,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AB76D42380901000BA878D /* DoneViewController.swift in Sources */,
 				D004C6D82380891A00F779B6 /* OfferPost.swift in Sources */,
 				D004C6D22380856A00F779B6 /* CreateRideViewController.swift in Sources */,
 				D02CFAF423807EE5009BCE0C /* ViewController.swift in Sources */,
