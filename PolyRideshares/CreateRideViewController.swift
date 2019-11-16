@@ -11,11 +11,28 @@ import Firebase
 import FirebaseDatabase
 
 class CreateRideViewController: UIViewController {
+    
+    @IBOutlet weak var inputTextField: UITextField!
+    
+    private var datePicker: UIDatePicker?
 
     var ref: DatabaseReference!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
+        datePicker = UIDatePicker()
+        datePicker?.datePickerMode = .dateAndTime
+        datePicker?.addTarget(self, action: #selector(CreateRideViewController.dateChanged(datePicker:)), for: .valueChanged)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreateRideViewController.viewTapped(gestureRecognizer:)))
+        
+        view.addGestureRecognizer(tapGesture)
+        
+        inputTextField.inputView = datePicker
+        
+        //database part
         ref = Database.database().reference()
         self.ref.child("users").child("test_child").setValue(OfferPost().toDictionary(), withCompletionBlock: { err, ref in
             if let error = err {
@@ -27,11 +44,26 @@ class CreateRideViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
+        view.endEditing(true)
+    }
+    
+    @objc func dateChanged(datePicker: UIDatePicker) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+        inputTextField.text = dateFormatter.string(from: datePicker.date)
+        view.endEditing(true)
+    }
+    
     
     func uploadForm() -> Void {
         self.ref.child("users").child("test_child").setValue(OfferPost())
     }
+    
+    
 
+    
     /*
     // MARK: - Navigation
 
