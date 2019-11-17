@@ -102,7 +102,7 @@ class RideTableViewController: UITableViewController {
     private func loadOfferPosts() {
         
         let OfferPost1 = OfferPost(username: "Jack Fales", fromLocation: "San Luis Obispo", toLocation: "Los Angeles", date: "11/20/2019", time: "05:30", price: "25", phoneNumber: "7141112222", willStop: true, numSeats: "3");
-        let OfferPost2 = OfferPost(username: "Jack Fales", fromLocation: "San Luis Obispo", toLocation: "Los Angeles", date: "11/20/2019", time: "05:30", price: "25", phoneNumber: "7141112222", willStop: true, numSeats: "3");
+        let OfferPost2 = OfferPost(username: "Justin Moist", fromLocation: "Berkeley", toLocation: "San Luis Obispo", date: "11/21/2019", time: "07:30", price: "20", phoneNumber: "7141112122", willStop: true, numSeats: "2");
         OfferPosts += [OfferPost1, OfferPost2]
         
     }
