@@ -9,16 +9,17 @@
 import Foundation
 
 //Class that represents the attributes of a post that can be converted to a NSDictionary to store on the firebase database.
-class OfferPost{
+class OfferPost: CustomStringConvertible{
     var username: String
     var fromLocation: String
     var toLocation: String
     var date: String
-    var time: Int
-    var price: Int
+    var time: String
+    var price: String
     var phoneNumber: String
     var willStop: Bool
-    var numSeats: Int
+    var numSeats: String
+    public var description: String { return "OfferPost: \(username) \(fromLocation) \(toLocation) \(date)" }
     
     //No-args constructor for a OfferPost Object
     init() {
@@ -26,16 +27,16 @@ class OfferPost{
         self.fromLocation = ""
         self.toLocation = ""
         self.date = ""
-        self.time = 0
-        self.price = 0
+        self.time = ""
+        self.price = ""
         self.phoneNumber = ""
         self.willStop = false
-        self.numSeats = 0
+        self.numSeats = ""
     }
     
     
     //Constructor for a OfferPost Object using the specified parameters
-    init(username:String, fromLocation:String, toLocation:String, date:String, time:Int, price:Int, phoneNumber:String, willStop:Bool, numSeats:Int) {
+    init(username:String, fromLocation:String, toLocation:String, date:String, time:String, price:String, phoneNumber:String, willStop:Bool, numSeats:String) {
         self.username = username
         self.fromLocation = fromLocation
         self.toLocation = toLocation
@@ -59,6 +60,8 @@ class OfferPost{
             "willStop" : self.willStop,
             "numSeats" : self.numSeats]
     }
+    
+    
     
 }
 
