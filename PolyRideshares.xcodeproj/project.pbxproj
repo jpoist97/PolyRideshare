@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C80AF7D677E446818E033A2 /* Pods_PolyRideshares_PolyRidesharesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0786AFD890428B8F42D513 /* Pods_PolyRideshares_PolyRidesharesUITests.framework */; };
 		65D3418726BCDA3585191C86 /* Pods_PolyRideshares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD945A2960A6E205D31C9752 /* Pods_PolyRideshares.framework */; };
+		A491198A2380C7E800D5AA7D /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49119892380C7E800D5AA7D /* RideTableViewCell.swift */; };
+		A491198C2380CE3B00D5AA7D /* RideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491198B2380CE3B00D5AA7D /* RideTableViewController.swift */; };
 		BAE28C70E03E2E708CB7E3BE /* Pods_PolyRidesharesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C83FB6D0CFFF8E5066707EEF /* Pods_PolyRidesharesTests.framework */; };
 		D004C6D22380856A00F779B6 /* CreateRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004C6D12380856A00F779B6 /* CreateRideViewController.swift */; };
 		D004C6D42380857F00F779B6 /* SeeRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D004C6D32380857F00F779B6 /* SeeRideViewController.swift */; };
@@ -48,6 +50,8 @@
 		23EC6019DBDC8E6095DBED18 /* Pods-PolyRideshares.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyRideshares.release.xcconfig"; path = "Target Support Files/Pods-PolyRideshares/Pods-PolyRideshares.release.xcconfig"; sourceTree = "<group>"; };
 		6845D85D1F2179A4D3031747 /* Pods-PolyRidesharesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyRidesharesTests.release.xcconfig"; path = "Target Support Files/Pods-PolyRidesharesTests/Pods-PolyRidesharesTests.release.xcconfig"; sourceTree = "<group>"; };
 		8008DDE5DCF953A2CD0F7F18 /* Pods-PolyRideshares.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyRideshares.debug.xcconfig"; path = "Target Support Files/Pods-PolyRideshares/Pods-PolyRideshares.debug.xcconfig"; sourceTree = "<group>"; };
+		A49119892380C7E800D5AA7D /* RideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		A491198B2380CE3B00D5AA7D /* RideTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideTableViewController.swift; sourceTree = "<group>"; };
 		AA0786AFD890428B8F42D513 /* Pods_PolyRideshares_PolyRidesharesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolyRideshares_PolyRidesharesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD945A2960A6E205D31C9752 /* Pods_PolyRideshares.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolyRideshares.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77D29BFD581DCBA832AF596 /* Pods-PolyRideshares-PolyRidesharesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolyRideshares-PolyRidesharesUITests.release.xcconfig"; path = "Target Support Files/Pods-PolyRideshares-PolyRidesharesUITests/Pods-PolyRideshares-PolyRidesharesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -157,9 +161,11 @@
 				D02CFAF523807EE5009BCE0C /* Main.storyboard */,
 				D0AB76D32380901000BA878D /* DoneViewController.swift */,
 				D004C6D72380891A00F779B6 /* OfferPost.swift */,
+				A491198B2380CE3B00D5AA7D /* RideTableViewController.swift */,
 				D004C6D52380868C00F779B6 /* ListRidesViewController.swift */,
 				D004C6D12380856A00F779B6 /* CreateRideViewController.swift */,
 				D004C6D32380857F00F779B6 /* SeeRideViewController.swift */,
+				A49119892380C7E800D5AA7D /* RideTableViewCell.swift */,
 				D02CFAF823807EE7009BCE0C /* Assets.xcassets */,
 				D02CFAFA23807EE7009BCE0C /* LaunchScreen.storyboard */,
 				D02CFAFD23807EE7009BCE0C /* Info.plist */,
@@ -426,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A491198A2380C7E800D5AA7D /* RideTableViewCell.swift in Sources */,
 				D0AB76D42380901000BA878D /* DoneViewController.swift in Sources */,
 				D004C6D82380891A00F779B6 /* OfferPost.swift in Sources */,
 				D004C6D22380856A00F779B6 /* CreateRideViewController.swift in Sources */,
@@ -434,6 +441,7 @@
 				D02CFAF023807EE5009BCE0C /* AppDelegate.swift in Sources */,
 				D02CFAF223807EE5009BCE0C /* SceneDelegate.swift in Sources */,
 				D004C6D42380857F00F779B6 /* SeeRideViewController.swift in Sources */,
+				A491198C2380CE3B00D5AA7D /* RideTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

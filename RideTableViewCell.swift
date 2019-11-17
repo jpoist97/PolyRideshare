@@ -9,7 +9,13 @@
 import UIKit
 
 class RideTableViewCell: UITableViewCell {
-
+    
+    // MARK: Properties
+    @IBOutlet weak var fromToLabel: UILabel!
+    @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var seatsNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
