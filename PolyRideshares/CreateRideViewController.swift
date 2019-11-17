@@ -49,64 +49,7 @@ class CreateRideViewController: UIViewController {
                 print("userInfoDictionary saved successfully!")
             }
         })
-    
-
-        let queryByFrom = ref.child("forms").queryOrdered(byChild: "fromLocation").queryEqual(toValue: "SLO")
-        let queryByTo = ref.child("forms").queryOrdered(byChild: "toLocation").queryEqual(toValue: "BERK")
-        let queryByDate = ref.child("forms").queryOrdered(byChild: "date").queryEqual(toValue: "11/20/19")
         
-        var fromArray: [OfferPost]
-        var toArray: [OfferPost]
-        var dateArray: [OfferPost]
-        
-        fromArray = []
-        toArray = []
-        dateArray = []
-        
-        queryByFrom.observeSingleEvent(of: .value
-            , with: { (snapshot) in
-                if let value = snapshot.value as? NSDictionary{
-                    print(value)
-                    let keys = value.allKeys
-                    for key in keys{
-                        let post = value[key] as! NSDictionary
-                        fromArray.append(OfferPost(username: post.value(forKey: "username") as! String, fromLocation: post.value(forKey: "fromLocation") as! String, toLocation: post.value(forKey: "toLocation") as! String, date: post.value(forKey: "date") as! String, time: post.value(forKey: "time") as! String, price: post.value(forKey: "price") as! String, phoneNumber: post.value(forKey: "phoneNumber") as! String, willStop: false, numSeats: post.value(forKey: "numSeats") as! String))
-                    }
-                    print("FROMARRAY", fromArray)
-                }
-                
-        })
-        
-        queryByTo.observeSingleEvent(of: .value
-            , with: { (snapshot) in
-                if let value = snapshot.value as? NSDictionary{
-                    print(value)
-                    let keys = value.allKeys
-                    for key in keys{
-                        let post = value[key] as! NSDictionary
-                        toArray.append(OfferPost(username: post.value(forKey: "username") as! String, fromLocation: post.value(forKey: "fromLocation") as! String, toLocation: post.value(forKey: "toLocation") as! String, date: post.value(forKey: "date") as! String, time: post.value(forKey: "time") as! String, price: post.value(forKey: "price") as! String, phoneNumber: post.value(forKey: "phoneNumber") as! String, willStop: false, numSeats: post.value(forKey: "numSeats") as! String))
-                    }
-                    print("TOARRAY", toArray)
-
-                }
-        })
-        
-        queryByDate.observeSingleEvent(of: .value
-            , with: { (snapshot) in
-                if let value = snapshot.value as? NSDictionary{
-                    print(value)
-                    let keys = value.allKeys
-                    for key in keys{
-                        let post = value[key] as! NSDictionary
-                        dateArray.append(OfferPost(username: post.value(forKey: "username") as! String, fromLocation: post.value(forKey: "fromLocation") as! String, toLocation: post.value(forKey: "toLocation") as! String, date: post.value(forKey: "date") as! String, time: post.value(forKey: "time") as! String, price: post.value(forKey: "price") as! String, phoneNumber: post.value(forKey: "phoneNumber") as! String, willStop: false, numSeats: post.value(forKey: "numSeats") as! String))
-
-                    }
-                    print("DATEARRAY", dateArray)
-                }
-        })
-        
-        
-        //let set1:Set<String> = Set(toArray)
     }
     
     func fillOfferPost() -> OfferPost {

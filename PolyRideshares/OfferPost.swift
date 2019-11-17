@@ -9,7 +9,7 @@
 import Foundation
 
 //Class that represents the attributes of a post that can be converted to a NSDictionary to store on the firebase database.
-class OfferPost: CustomStringConvertible{
+class OfferPost: CustomStringConvertible, Hashable, Equatable{
     var username: String
     var fromLocation: String
     var toLocation: String
@@ -61,6 +61,21 @@ class OfferPost: CustomStringConvertible{
             "numSeats" : self.numSeats]
     }
     
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.username)
+        hasher.combine(self.fromLocation)
+        hasher.combine(self.toLocation)
+        hasher.combine(self.date)
+        hasher.combine(self.time)
+        hasher.combine(self.price)
+        hasher.combine(self.phoneNumber)
+        hasher.combine(self.willStop)
+        hasher.combine(self.numSeats)
+    }
+    
+    static func ==(lhs: OfferPost, rhs: OfferPost) -> Bool {
+        return lhs.username == rhs.username && lhs.toLocation == rhs.toLocation && lhs.fromLocation == rhs.fromLocation && lhs.date == rhs.date && lhs.time == rhs.time && lhs.price == rhs.price && lhs.phoneNumber == rhs.phoneNumber && lhs.willStop == rhs.willStop && lhs.numSeats == rhs.numSeats
+    }
     
     
 }
