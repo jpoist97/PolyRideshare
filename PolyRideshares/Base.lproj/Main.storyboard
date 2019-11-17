@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -296,6 +296,12 @@
                     <navigationItem key="navigationItem" id="cl7-Xc-68r"/>
                     <connections>
                         <outlet property="InputTextField" destination="3bR-U7-yRF" id="UTM-Ma-Jii"/>
+                        <outlet property="fromLocTextField" destination="uKB-S3-S9A" id="2dp-9W-fyD"/>
+                        <outlet property="nameTextField" destination="iRM-YM-IEV" id="2hh-gx-cFk"/>
+                        <outlet property="phoneNumberTextField" destination="KMK-is-qSZ" id="C8o-zh-PcQ"/>
+                        <outlet property="priceTextField" destination="5Az-Gl-116" id="x8h-ji-ZOD"/>
+                        <outlet property="seatsTextField" destination="qGL-RE-nIa" id="VF0-7x-haj"/>
+                        <outlet property="toLocTextField" destination="gCf-G8-VcO" id="H6k-xP-c35"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0g4-cB-WLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -401,6 +407,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="queryButtonPressed:" destination="o4g-BT-HaT" eventType="touchUpInside" id="j26-4w-Cg6"/>
                                     <segue destination="d8A-sb-0E5" kind="show" id="fbp-62-jWx"/>
                                 </connections>
                             </button>
@@ -434,7 +441,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="sjP-D9-wBE"/>
                     <connections>
+                        <outlet property="fromTextField" destination="fnN-8V-DQJ" id="9oy-KC-cxc"/>
                         <outlet property="inputDateTimeTextField" destination="UQa-Ax-g5O" id="RN9-LM-mCa"/>
+                        <outlet property="toTextField" destination="Goi-Qv-hPF" id="akU-P8-5ID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w78-ju-3F0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

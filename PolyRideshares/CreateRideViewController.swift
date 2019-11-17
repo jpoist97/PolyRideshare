@@ -12,6 +12,12 @@ import FirebaseDatabase
 
 class CreateRideViewController: UIViewController {
     
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var fromLocTextField: UITextField!
+    @IBOutlet weak var toLocTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var seatsTextField: UITextField!
     @IBOutlet weak var inputTextField: UITextField!
     
     private var datePicker: UIDatePicker?
@@ -31,23 +37,9 @@ class CreateRideViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
         
         inputTextField.inputView = datePicker
-        //Test Query code
-//        ref.child("users").child("test_child").observeSingleEvent(of: .value, with: { (snapshot) in
-//            let value = snapshot.value as? NSDictionary
-//            let username = value?["username"] as? String ?? ""
-//            let fromLocation = value?["toLocation"] as? String ?? ""
-//            print(username, fromLocation)
-//        })
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
-//=======
-        
-        
-        
         //database part
         ref = Database.database().reference()
         self.ref.child("forms").childByAutoId().setValue(fillOfferPost().toDictionary(), withCompletionBlock: { err, ref in
@@ -57,24 +49,18 @@ class CreateRideViewController: UIViewController {
                 print("userInfoDictionary saved successfully!")
             }
         })
-    
-
-        let query = ref.child("forms").queryOrdered(byChild: "username")
         
-        query.observeSingleEvent(of: .value
-            , with: { (snapshot) in
-                let value = snapshot.value as? NSDictionary
-                let username = value?["username"] as? String ?? ""
-                let fromLocation = value?["toLocation"] as? String ?? ""
-                print(username, fromLocation)
-        })
     }
     
     func fillOfferPost() -> OfferPost {
-        return OfferPost(username: "username1", fromLocation: "f", toLocation: "t", date: "d", time: 0, price: 0, phoneNumber: "408", willStop: false, numSeats: 0)
+        let fullDate = inputTextField.text!
+        let dateArr = fullDate.components(separatedBy: " ")
+        let date = dateArr[0]
+        let time = dateArr[1]
+        
+        return OfferPost(username: nameTextField.text!, fromLocation: fromLocTextField.text!, toLocation: toLocTextField.text!, date: date, time: time, price: priceTextField.text!, phoneNumber: phoneNumberTextField.text!, willStop: false, numSeats: seatsTextField.text!)
     }
     
-//=======
     @objc func viewTapped(gestureRecognizer: UITapGestureRecognizer){
         view.endEditing(true)
     }
@@ -88,9 +74,9 @@ class CreateRideViewController: UIViewController {
     }
     
     
-    func uploadForm() -> Void {
-        self.ref.child("users").child("test_child").setValue(OfferPost())
-    }
+//    func uploadForm() -> Void {
+//        self.ref.child("users").child("test_child").setValue(OfferPost())
+//    }
     
     
 

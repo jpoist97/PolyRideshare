@@ -9,16 +9,17 @@
 import Foundation
 
 //Class that represents the attributes of a post that can be converted to a NSDictionary to store on the firebase database.
-class OfferPost{
+class OfferPost: CustomStringConvertible, Hashable, Equatable{
     var username: String
     var fromLocation: String
     var toLocation: String
     var date: String
-    var time: Int
-    var price: Int
+    var time: String
+    var price: String
     var phoneNumber: String
     var willStop: Bool
-    var numSeats: Int
+    var numSeats: String
+    public var description: String { return "OfferPost: \(username) \(fromLocation) \(toLocation) \(date)" }
     
     //No-args constructor for a OfferPost Object
     init() {
@@ -26,16 +27,16 @@ class OfferPost{
         self.fromLocation = ""
         self.toLocation = ""
         self.date = ""
-        self.time = 0
-        self.price = 0
+        self.time = ""
+        self.price = ""
         self.phoneNumber = ""
         self.willStop = false
-        self.numSeats = 0
+        self.numSeats = ""
     }
     
     
     //Constructor for a OfferPost Object using the specified parameters
-    init(username:String, fromLocation:String, toLocation:String, date:String, time:Int, price:Int, phoneNumber:String, willStop:Bool, numSeats:Int) {
+    init(username:String, fromLocation:String, toLocation:String, date:String, time:String, price:String, phoneNumber:String, willStop:Bool, numSeats:String) {
         self.username = username
         self.fromLocation = fromLocation
         self.toLocation = toLocation
@@ -59,6 +60,23 @@ class OfferPost{
             "willStop" : self.willStop,
             "numSeats" : self.numSeats]
     }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(self.username)
+        hasher.combine(self.fromLocation)
+        hasher.combine(self.toLocation)
+        hasher.combine(self.date)
+        hasher.combine(self.time)
+        hasher.combine(self.price)
+        hasher.combine(self.phoneNumber)
+        hasher.combine(self.willStop)
+        hasher.combine(self.numSeats)
+    }
+    
+    static func ==(lhs: OfferPost, rhs: OfferPost) -> Bool {
+        return lhs.username == rhs.username && lhs.toLocation == rhs.toLocation && lhs.fromLocation == rhs.fromLocation && lhs.date == rhs.date && lhs.time == rhs.time && lhs.price == rhs.price && lhs.phoneNumber == rhs.phoneNumber && lhs.willStop == rhs.willStop && lhs.numSeats == rhs.numSeats
+    }
+    
     
 }
 
